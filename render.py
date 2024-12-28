@@ -31,9 +31,10 @@ def recursive_resolve_context(context):
 context = {
     "servername": "https://api.foo.com",
     "apis": ["https://#{projectname | lower()}.#{baseurl}", "https://api2.foo.com", "https://api3.foo.com"],
-    "apiscsv": "https://#{projectname | lower()}.#{baseurl}, https://api2.foo.com, https://api3.foo.com",
+    "apiscsv": "https://#{api1}, https://api2.foo.com, https://api3.foo.com",
     "baseurl": "foo.com",
-    "projectname": "API1"
+    "projectname": "API1",
+    "api1": "#{projectname | lower()}.#{baseurl}"
 }
 
 json_template_string = '''
